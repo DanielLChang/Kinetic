@@ -10,13 +10,19 @@ export default class Clock extends React.Component {
     };
 
     this.tick = this.tick.bind(this);
+    this.greeting = this.greeting.bind(this);
   }
 
   componentDidMount() {
+    this.greeting();
     setInterval(this.tick, 1000);
   }
 
   tick() {
+    this.setState({time: new Date()});
+  }
+
+  greeting() {
     const hour = this.state.time.getHours();
 
     if (hour >= 0 && hour < 12) {
@@ -26,8 +32,6 @@ export default class Clock extends React.Component {
     } else {
       this.setState({greeting: 'Good Evening'});
     }
-
-    this.setState({time: new Date()});
   }
 
   render() {

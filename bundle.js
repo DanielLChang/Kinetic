@@ -9548,17 +9548,24 @@ var Clock = function (_React$Component) {
     };
 
     _this.tick = _this.tick.bind(_this);
+    _this.greeting = _this.greeting.bind(_this);
     return _this;
   }
 
   _createClass(Clock, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      this.greeting();
       setInterval(this.tick, 1000);
     }
   }, {
     key: 'tick',
     value: function tick() {
+      this.setState({ time: new Date() });
+    }
+  }, {
+    key: 'greeting',
+    value: function greeting() {
       var hour = this.state.time.getHours();
 
       if (hour >= 0 && hour < 12) {
@@ -9568,8 +9575,6 @@ var Clock = function (_React$Component) {
       } else {
         this.setState({ greeting: 'Good Evening' });
       }
-
-      this.setState({ time: new Date() });
     }
   }, {
     key: 'render',
