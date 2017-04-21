@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: "./kinetic.jsx",
+  entry: "./frontend/kinetic.jsx",
   output: {
     path: path.resolve(__dirname),
     filename: "bundle.js"
@@ -19,7 +19,7 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-maps',
+  devtool: 'source-map',
   resolve: {
     extensions: [".js", ".jsx", "*"]
   }
