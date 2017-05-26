@@ -17,7 +17,7 @@ export default class Clock extends React.Component {
   }
 
   updateClock() {
-    const time = new Date;
+    const time = new Date();
     this.setState({time: time.toLocaleTimeString('en-us')});
   }
 

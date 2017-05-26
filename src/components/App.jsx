@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Clock from './Clock.jsx';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <div className="app">
-        <h1>Kinetic</h1>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app">
+    <Clock />
+  </div>
+);
+
+export default App;
